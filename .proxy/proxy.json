@@ -1,0 +1,7 @@
+{
+  "/api/*": {
+    "target": "http://data.fixer.io",
+    "secure": false,
+    "changeOrigin": true
+  }
+}
