@@ -1,0 +1,13 @@
+<ngb-carousel *ngIf="exchangePairs" (slide)="refreshValue($event)">
+  <ng-template ngbSlide *ngFor="let exchangePair of exchangePairs" class="slide">
+    <img [src]="exchangePair.src" alt="exchangePair.name" />
+    <div class="slide-info">
+      <div class="slide-info-exchange">
+        Kurs {{exchangePair.name}}: {{exchangeValue}}
+      </div>
+      <div class="slide-info-time">
+        {{exchangeTime | amDateFormat:'LL'}} / {{exchangeTime | amDateFormat:'HH:mm'}}
+      </div>
+    </div>
+  </ng-template>
+</ngb-carousel>
