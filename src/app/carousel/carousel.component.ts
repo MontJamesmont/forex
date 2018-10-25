@@ -25,7 +25,7 @@ export class CarouselComponent implements OnInit {
     this.getExchangeValue(this.exchangePairs[0].symbols);
   }
 
-  getExchangeValue(symbols: string[]): void {
+  private getExchangeValue(symbols: string[]): void {
     this.apiService.getLatest(symbols).subscribe((data) => {
       this.exchangeValue = Math.round((data.rates[symbols[0]] / data.rates[symbols[1]]) * 10000) / 10000;
       this.exchangeTime = new Date(data.timestamp * 1000);
